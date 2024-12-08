@@ -7,13 +7,13 @@ import AuthSignInInputs from "@/components/features/auth/components/auth-sign-in
 import { authbg } from "../../../public/images";
 
 export default function AuthPage() {
-  const [isSignUp, setIsSignUp] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(true);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4">
-      <div className="w-full max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 bg-white shadow-xl rounded-xl overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 p-4 sm:p-0.5">
+      <div className="w-full max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8  bg-white shadow-xl rounded-xl overflow-hidden">
         {/* Image Section */}
-        <div className="hidden lg:flex items-center justify-center bg-blue-50 p-8">
+        <div className="hidden lg:flex items-center justify-center bg-blue-50 sm:p-0 p-8">
           <Image
             src={authbg} // Updated to use a more standard path
             height={800}
@@ -25,7 +25,7 @@ export default function AuthPage() {
         </div>
 
         {/* Form Section */}
-        <div className="flex items-center justify-center p-6 sm:p-8 lg:p-12">
+        <div className="flex items-center justify-center  p-6 sm:p-0.5 lg:p-12">
           {isSignUp ? (
             <AuthSignUpInputs isSignUp={isSignUp} setIsSignUp={setIsSignUp} />
           ) : (
